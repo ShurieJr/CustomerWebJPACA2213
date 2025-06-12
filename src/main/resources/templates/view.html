@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+</head>
+<body>
+<div >
+  <nav class="navbar bg-primary  navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Spring Demo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/register">Register</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="#">View All</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="container-fluid">
+  Registered Books
+</div>
+<div class="container-fluid">
+  <h1>Registered Books</h1>
+  <!--    <form>-->
+  <!--&lt;!&ndash;        Search <input type="text" class="form-control" name="keyword" id="keyword" th:value="${keyword}">&ndash;&gt;-->
+  <!--        <input type="submit" value="search" class="btn btn-primary">-->
+  <!--    </form>-->
+  <div class="container-fluid">
+<!--    <table class="table">-->
+<!--      <thead>-->
+<!--      <tr>-->
+<!--        <th scope="col">Id</th>-->
+<!--        <th scope="col">Title</th>-->
+<!--        <th scope="col">Author</th>-->
+<!--        <th scope="col">Action</th>-->
+<!--      </tr>-->
+<!--      </thead>-->
+<!--      <tbody>-->
+<!--      <tr th:if="${books.empty}">-->
+<!--        <td colspan="2">No data available</td>-->
+<!--      </tr>-->
+<!--      <tr th:each="b :${books}">-->
+<!--        <td th:text="${b.id}"></td>-->
+<!--        <td th:text="${b.title}"></td>-->
+<!--        <td th:text="${b.author}"></td>-->
+<!--        <td>-->
+<!--          <a th:href="@{/delete/{id}(id=${b.id})}">delete</a>-->
+<!--          <a th:href="@{/Edit/{id}(id=${b.id})}">Update</a>-->
+<!--        </td>-->
+<!--      </tr>-->
+
+<!--      </tbody>-->
+<!--    </table>-->
+  </div>
+
+  <div class="container-fluid">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">NAME</th>
+        <th scope="col">ADDRESS</th>
+        <th scope="col">TEL</th>
+        <th scope="col">ACTION</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:if="${customers.empty}">
+        <td colspan="3"> No data available</td>
+      </tr>
+
+      <tr th:each="c : ${customers}">
+        <td th:text="${c.id}"></td>
+        <td th:text="${c.name}"></td>
+        <td th:text="${c.address}"></td>
+        <td th:text="${c.tel}"></td>
+        <td>
+          <a th:href="@{/delete/{id}(id=${c.id})}">delete</a>
+          <a th:href="@{/Edit/{id}(id=${c.id})}">update</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+</body>
+<footer class="footer mt-auto py-3 bg-body-tertiary ">
+  <div class="container">
+        <span class="text-body-secondary">
+   Shurie@2025.All rights reserved.</span> </div> </footer>
+</html>
